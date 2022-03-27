@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E01D6341585656E65AE409D /* Pods_Nimble_Code_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E01D8181212CF8324D1C856 /* Pods_Nimble_Code_ChallengeUITests.framework */; };
+		440028CA8CD69A39BF33C15F /* Pods_Nimble_Code_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB3FB98485841756E6422B5 /* Pods_Nimble_Code_Challenge.framework */; };
+		6BD35AE03177828563010025 /* Pods_Nimble_Code_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5FF803841BFE2DCAC3112D /* Pods_Nimble_Code_ChallengeTests.framework */; };
 		F576C5D027EED2EB0052559D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F576C5CF27EED2EB0052559D /* AppDelegate.swift */; };
 		F576C5D427EED2EB0052559D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F576C5D327EED2EB0052559D /* ViewController.swift */; };
 		F576C5D727EED2EB0052559D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F576C5D527EED2EB0052559D /* Main.storyboard */; };
@@ -25,6 +28,12 @@
 		F5F16CEA27EF83F00008DFA7 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CE227EF83F00008DFA7 /* EndpointType.swift */; };
 		F5F16CEE27EF84810008DFA7 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CED27EF84810008DFA7 /* AppConfiguration.swift */; };
 		F5F16CEF27EF84810008DFA7 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CED27EF84810008DFA7 /* AppConfiguration.swift */; };
+		F5F16CF127F0349B0008DFA7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CF027F0349B0008DFA7 /* APIError.swift */; };
+		F5F16CF227F0349B0008DFA7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CF027F0349B0008DFA7 /* APIError.swift */; };
+		F5F16CF527F056790008DFA7 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CF427F056790008DFA7 /* UserDefaultManager.swift */; };
+		F5F16CF627F056790008DFA7 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CF427F056790008DFA7 /* UserDefaultManager.swift */; };
+		F5F16CF827F059420008DFA7 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CF727F059420008DFA7 /* LoginResponse.swift */; };
+		F5F16CF927F059420008DFA7 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CF727F059420008DFA7 /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13E89E842A49B58790E03693 /* Pods-Nimble Code Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Nimble Code Challenge/Pods-Nimble Code Challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		19FA4C295E43A61065E01B23 /* Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-Nimble Code Challenge-Nimble Code ChallengeUITests/Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1E373D4116234CB399E79E58 /* Pods-Nimble Code Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code Challenge.release.xcconfig"; path = "Target Support Files/Pods-Nimble Code Challenge/Pods-Nimble Code Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		354A7C34F159EC19B2FF6DCC /* Pods-Nimble Code ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code ChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-Nimble Code ChallengeTests/Pods-Nimble Code ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F4AE4AD8682EB620F90E4CC /* Pods-Nimble Code ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Nimble Code ChallengeUITests/Pods-Nimble Code ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5FB3FB98485841756E6422B5 /* Pods_Nimble_Code_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nimble_Code_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E01D8181212CF8324D1C856 /* Pods_Nimble_Code_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nimble_Code_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		974191DC97A5FCDDD18EB189 /* Pods-Nimble Code ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-Nimble Code ChallengeUITests/Pods-Nimble Code ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CDDB77A61FE10ECD696681D3 /* Pods-Nimble Code ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-Nimble Code ChallengeTests/Pods-Nimble Code ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		F576C5CC27EED2EB0052559D /* Nimble Code Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nimble Code Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F576C5CF27EED2EB0052559D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F576C5D327EED2EB0052559D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +80,11 @@
 		F5F16CE127EF83F00008DFA7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F5F16CE227EF83F00008DFA7 /* EndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
 		F5F16CED27EF84810008DFA7 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		F5F16CF027F0349B0008DFA7 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F5F16CF427F056790008DFA7 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		F5F16CF727F059420008DFA7 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		FC5FF803841BFE2DCAC3112D /* Pods_Nimble_Code_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nimble_Code_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD61AE3AEC3BAE9B649C7221 /* Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Nimble Code Challenge-Nimble Code ChallengeUITests/Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440028CA8CD69A39BF33C15F /* Pods_Nimble_Code_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BD35AE03177828563010025 /* Pods_Nimble_Code_ChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,12 +108,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E01D6341585656E65AE409D /* Pods_Nimble_Code_ChallengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1165C5981C1453DE62E9FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FB3FB98485841756E6422B5 /* Pods_Nimble_Code_Challenge.framework */,
+				FC5FF803841BFE2DCAC3112D /* Pods_Nimble_Code_ChallengeTests.framework */,
+				8E01D8181212CF8324D1C856 /* Pods_Nimble_Code_ChallengeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF78A3F55B36A46019CA98F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				13E89E842A49B58790E03693 /* Pods-Nimble Code Challenge.debug.xcconfig */,
+				1E373D4116234CB399E79E58 /* Pods-Nimble Code Challenge.release.xcconfig */,
+				FD61AE3AEC3BAE9B649C7221 /* Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig */,
+				19FA4C295E43A61065E01B23 /* Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.release.xcconfig */,
+				354A7C34F159EC19B2FF6DCC /* Pods-Nimble Code ChallengeTests.debug.xcconfig */,
+				CDDB77A61FE10ECD696681D3 /* Pods-Nimble Code ChallengeTests.release.xcconfig */,
+				4F4AE4AD8682EB620F90E4CC /* Pods-Nimble Code ChallengeUITests.debug.xcconfig */,
+				974191DC97A5FCDDD18EB189 /* Pods-Nimble Code ChallengeUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F576C5C327EED2EB0052559D = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +147,8 @@
 				F576C5E527EED2EE0052559D /* Nimble Code ChallengeTests */,
 				F576C5EF27EED2EE0052559D /* Nimble Code ChallengeUITests */,
 				F576C5CD27EED2EB0052559D /* Products */,
+				AF78A3F55B36A46019CA98F8 /* Pods */,
+				1B1165C5981C1453DE62E9FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +197,7 @@
 		F5F16CD827EF83F00008DFA7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F5F16CF727F059420008DFA7 /* LoginResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -161,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				F5F16CDB27EF83F00008DFA7 /* Extensions */,
+				F5F16CF327F0349F0008DFA7 /* Helper */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -216,6 +271,15 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		F5F16CF327F0349F0008DFA7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F5F16CF027F0349B0008DFA7 /* APIError.swift */,
+				F5F16CF427F056790008DFA7 /* UserDefaultManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,9 +287,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F576C5F627EED2EE0052559D /* Build configuration list for PBXNativeTarget "Nimble Code Challenge" */;
 			buildPhases = (
+				517694F5979146BB0121FC3C /* [CP] Check Pods Manifest.lock */,
 				F576C5C827EED2EB0052559D /* Sources */,
 				F576C5C927EED2EB0052559D /* Frameworks */,
 				F576C5CA27EED2EB0052559D /* Resources */,
+				7E3F886649D1BDFC73971C84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +306,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F576C5F927EED2EE0052559D /* Build configuration list for PBXNativeTarget "Nimble Code ChallengeTests" */;
 			buildPhases = (
+				4EB5B9F02660FD92E5D2432C /* [CP] Check Pods Manifest.lock */,
 				F576C5DE27EED2EE0052559D /* Sources */,
 				F576C5DF27EED2EE0052559D /* Frameworks */,
 				F576C5E027EED2EE0052559D /* Resources */,
@@ -258,6 +325,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F576C5FC27EED2EE0052559D /* Build configuration list for PBXNativeTarget "Nimble Code ChallengeUITests" */;
 			buildPhases = (
+				334706EF2455A0B640CFC6D0 /* [CP] Check Pods Manifest.lock */,
 				F576C5E827EED2EE0052559D /* Sources */,
 				F576C5E927EED2EE0052559D /* Frameworks */,
 				F576C5EA27EED2EE0052559D /* Resources */,
@@ -342,16 +410,105 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		334706EF2455A0B640CFC6D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nimble Code ChallengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EB5B9F02660FD92E5D2432C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nimble Code ChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		517694F5979146BB0121FC3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nimble Code Challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E3F886649D1BDFC73971C84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nimble Code Challenge/Pods-Nimble Code Challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nimble Code Challenge/Pods-Nimble Code Challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nimble Code Challenge/Pods-Nimble Code Challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F576C5C827EED2EB0052559D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F5F16CE327EF83F00008DFA7 /* Encodable+Ext.swift in Sources */,
+				F5F16CF127F0349B0008DFA7 /* APIError.swift in Sources */,
 				F5F16CE727EF83F00008DFA7 /* APIService.swift in Sources */,
 				F5F16CE927EF83F00008DFA7 /* EndpointType.swift in Sources */,
+				F5F16CF827F059420008DFA7 /* LoginResponse.swift in Sources */,
 				F576C5D427EED2EB0052559D /* ViewController.swift in Sources */,
 				F5F16CE527EF83F00008DFA7 /* UIViewController+Ext.swift in Sources */,
+				F5F16CF527F056790008DFA7 /* UserDefaultManager.swift in Sources */,
 				F5F16CEE27EF84810008DFA7 /* AppConfiguration.swift in Sources */,
 				F576C5D027EED2EB0052559D /* AppDelegate.swift in Sources */,
 			);
@@ -363,6 +520,9 @@
 			files = (
 				F5F16CEF27EF84810008DFA7 /* AppConfiguration.swift in Sources */,
 				F5F16CEA27EF83F00008DFA7 /* EndpointType.swift in Sources */,
+				F5F16CF927F059420008DFA7 /* LoginResponse.swift in Sources */,
+				F5F16CF627F056790008DFA7 /* UserDefaultManager.swift in Sources */,
+				F5F16CF227F0349B0008DFA7 /* APIError.swift in Sources */,
 				F576C5E727EED2EE0052559D /* Nimble_Code_ChallengeTests.swift in Sources */,
 				F5F16CE427EF83F00008DFA7 /* Encodable+Ext.swift in Sources */,
 				F5F16CE827EF83F00008DFA7 /* APIService.swift in Sources */,
@@ -532,6 +692,7 @@
 		};
 		F576C5F727EED2EE0052559D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13E89E842A49B58790E03693 /* Pods-Nimble Code Challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -561,6 +722,7 @@
 		};
 		F576C5F827EED2EE0052559D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E373D4116234CB399E79E58 /* Pods-Nimble Code Challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -590,6 +752,7 @@
 		};
 		F576C5FA27EED2EE0052559D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 354A7C34F159EC19B2FF6DCC /* Pods-Nimble Code ChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -610,6 +773,7 @@
 		};
 		F576C5FB27EED2EE0052559D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDDB77A61FE10ECD696681D3 /* Pods-Nimble Code ChallengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -630,6 +794,7 @@
 		};
 		F576C5FD27EED2EE0052559D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F4AE4AD8682EB620F90E4CC /* Pods-Nimble Code ChallengeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -648,6 +813,7 @@
 		};
 		F576C5FE27EED2EE0052559D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 974191DC97A5FCDDD18EB189 /* Pods-Nimble Code ChallengeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -9,7 +9,9 @@ import Foundation
 
 struct App {
     
-    struct Configuration {
-        static let baseUrl = "https://survey-api.nimblehq.co"
+    enum Configuration {
+        static let baseUrl = "https://survey-api.nimblehq.co/"
+        static let clientId = "ofzl-2h5ympKa0WqqTzqlVJUiRsxmXQmt5tkgrlWnOE"
+        static let clientSecret = "lMQb900L-mTeU-FVTCwyhjsfBwRCxwwbCitPob96cuU"
     }
 }
