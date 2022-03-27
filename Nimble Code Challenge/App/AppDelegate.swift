@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,14 +14,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // enable IQKeyboardManager
+        IQKeyboardManager.shared.enable = true
+        // setup window and first scene
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = ViewController.initFromStoryboard()
-        let navigationController = UINavigationController(rootViewController: vc)
-        window?.rootViewController = navigationController
+        navigateToLogin()
         window?.makeKeyAndVisible()
         
         return true
     }
 
+    
+    func navigateToHome() {
+//        let home = MainVC.initFromStoryboard()
+//        let nav = UINavigationController(rootViewController: home)
+//        window?.rootViewController = nav
+    }
+    
+    func navigateToLogin() {
+        let loginVC = LoginVC.initFromStoryboard()
+        window?.rootViewController = loginVC
+    }
 }
 

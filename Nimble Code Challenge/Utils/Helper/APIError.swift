@@ -11,6 +11,7 @@ enum APIError: Error {
     case invalidUrl
     case specifiedCode(Int)
     case responseSerializationFailed
+    case errorResponse(ErrorResponse)
     case unauthorized
     case unknown(data: Any?)
     case other(Error)
@@ -23,6 +24,8 @@ enum APIError: Error {
             return "Error code: \(code)"
         case .responseSerializationFailed:
             return "Serialization Failed"
+        case .errorResponse(let response):
+            return response.errors?.first?.detail ?? "Unexpected Error, Please try again!"
         case .unauthorized:
             return "Unauthorized"
         case .unknown:

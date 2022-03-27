@@ -16,7 +16,7 @@ enum EndpointType {
         switch self {
         
         case .login(let email, let password):
-            return EndpointRequest(method: "post",
+            return EndpointRequest(method: .post,
                                    path: "api/v1/oauth/token",
                                    body: ["grant_type": "password",
                                           "email": email,
@@ -25,7 +25,7 @@ enum EndpointType {
                                           "client_secret": App.Configuration.clientSecret])
             
         case .refreshToken(let token):
-            return EndpointRequest(method: "post",
+            return EndpointRequest(method: .post,
                                    path: "api/v1/oauth/token",
                                    body: ["grant_type": "refresh_token",
                                           "refresh_token": token,
@@ -37,14 +37,14 @@ enum EndpointType {
 
 struct EndpointRequest: URLRequestConvertible {
     
-    let method: String
+    let method: HTTPMethod
     let baseUrl: String
     let path: String
     var headers: [String: String]?
     var queries: [String: Any]?
     var body: Any?
     
-    init(method: String, baseUrl: String = App.Configuration.baseUrl, path: String, headers: [String: String]? = nil, queries: [String: Any]? = nil, body: Any? = nil) {
+    init(method: HTTPMethod, baseUrl: String = App.Configuration.baseUrl, path: String, headers: [String: String]? = nil, queries: [String: Any]? = nil, body: Any? = nil) {
         self.baseUrl = baseUrl
         self.path = path
         self.method = method
@@ -60,7 +60,7 @@ struct EndpointRequest: URLRequestConvertible {
         var request = URLRequest(url: urlRequest)
         
         // set method
-        request.httpMethod = method
+        request.httpMethod = method.rawValue
         // build headers
         if let headers = self.headers {
             for (key, value) in headers {
@@ -68,6 +68,10 @@ struct EndpointRequest: URLRequestConvertible {
             }
         }
 
+        if method == .post || method == .put || method == .patch {
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
+        
         // build queries
         if let queries = self.queries {
             let queryParams = queries.map { pair  in
