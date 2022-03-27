@@ -40,10 +40,14 @@ class APIService {
                     
                 case .failure(let error):
                     // if has error data response
-                    if let responseData = response.data,
-                       let responseError = (try? JSONSerialization.jsonObject(with: responseData, options: [])) as? [String:Any] {
-                        completion?(.failure(APIError.unknown(data: responseError)))
+                    if let responseData = response.data {
+                        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: responseData) {
+                            completion?(.failure(APIError.errorResponse(errorResponse)))
                         
+                        } else if let errorResponse = (try? JSONSerialization.jsonObject(with: responseData, options: [])) as? [String:Any] {
+                            completion?(.failure(APIError.unknown(data: errorResponse)))
+                        }
+                    
                     // else return other error
                     } else {
                         completion?(.failure(APIError.other(error)))
