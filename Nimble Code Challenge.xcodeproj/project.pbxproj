@@ -49,6 +49,8 @@
 		F5F16D1227F0ACE50008DFA7 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16D1027F0ACE50008DFA7 /* UIView+Ext.swift */; };
 		F5F16D1427F0C05D0008DFA7 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16D1327F0C05D0008DFA7 /* ErrorResponse.swift */; };
 		F5F16D1527F0C05D0008DFA7 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16D1327F0C05D0008DFA7 /* ErrorResponse.swift */; };
+		F5F2298827F217BD00566875 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2298727F217BD00566875 /* HomeVC.swift */; };
+		F5F2298927F217BD00566875 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2298727F217BD00566875 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,7 @@
 		F5F16D0D27F0AB590008DFA7 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		F5F16D1027F0ACE50008DFA7 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F5F16D1327F0C05D0008DFA7 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		F5F2298727F217BD00566875 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		FC5FF803841BFE2DCAC3112D /* Pods_Nimble_Code_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nimble_Code_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD61AE3AEC3BAE9B649C7221 /* Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Nimble Code Challenge-Nimble Code ChallengeUITests/Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +260,7 @@
 		F5F16CDE27EF83F00008DFA7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F5F2298627F2179A00566875 /* Home */,
 				F5F16CFA27F068D70008DFA7 /* Login */,
 			);
 			path = Scene;
@@ -331,6 +335,22 @@
 				F5F16D0627F083610008DFA7 /* GradientView.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		F5F2298627F2179A00566875 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F5F2298A27F2194800566875 /* ViewModel */,
+				F5F2298727F217BD00566875 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F5F2298A27F2194800566875 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,6 +577,7 @@
 				F5F16D1127F0ACE50008DFA7 /* UIView+Ext.swift in Sources */,
 				F5F16D0327F069EA0008DFA7 /* Observable.swift in Sources */,
 				F5F16CFC27F0690B0008DFA7 /* LoginVC.swift in Sources */,
+				F5F2298827F217BD00566875 /* HomeVC.swift in Sources */,
 				F5F16CE327EF83F00008DFA7 /* Encodable+Ext.swift in Sources */,
 				F5F16CF127F0349B0008DFA7 /* APIError.swift in Sources */,
 				F5F16D0727F083610008DFA7 /* GradientView.swift in Sources */,
@@ -581,6 +602,7 @@
 				F5F16D1227F0ACE50008DFA7 /* UIView+Ext.swift in Sources */,
 				F5F16CEF27EF84810008DFA7 /* AppConfiguration.swift in Sources */,
 				F5F16D0127F0691F0008DFA7 /* LoginVM.swift in Sources */,
+				F5F2298927F217BD00566875 /* HomeVC.swift in Sources */,
 				F5F16CEA27EF83F00008DFA7 /* EndpointType.swift in Sources */,
 				F5F16CF927F059420008DFA7 /* LoginResponse.swift in Sources */,
 				F5F16D0427F069EA0008DFA7 /* Observable.swift in Sources */,

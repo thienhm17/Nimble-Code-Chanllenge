@@ -11,6 +11,7 @@ class LoginVM {
     
     var loading = Observable<Bool>(false)
     var error = Observable<String?>(nil)
+    var loginSuccess = Observable<Bool>(false)
     
     func login(email: String?, password: String?) {
         guard let email = email, !email.isEmpty,
@@ -31,7 +32,7 @@ class LoginVM {
                 
             } else {
                 // else login successfully
-                self?.error.value = "Success"
+                self?.loginSuccess.value = true
             }
         }
     }

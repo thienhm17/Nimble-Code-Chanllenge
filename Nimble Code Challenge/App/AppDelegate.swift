@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func navigateToHome() {
-//        let home = MainVC.initFromStoryboard()
-//        let nav = UINavigationController(rootViewController: home)
-//        window?.rootViewController = nav
+        let home = HomeVC.initFromStoryboard()
+        let nav = UINavigationController(rootViewController: home)
+        window?.rootViewController = nav
     }
     
     func navigateToLogin() {
