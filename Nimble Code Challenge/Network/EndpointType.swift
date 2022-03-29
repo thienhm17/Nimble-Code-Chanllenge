@@ -11,6 +11,7 @@ import Alamofire
 enum EndpointType {
     case login(email: String, password: String)
     case refreshToken(token: String)
+    case getSurveys(pageIndex: Int, pageSize: Int)
     
     var request: EndpointRequest {
         switch self {
@@ -31,6 +32,12 @@ enum EndpointType {
                                           "refresh_token": token,
                                           "client_id": App.Configuration.clientId,
                                           "client_secret": App.Configuration.clientSecret])
+            
+        case .getSurveys(let pageIndex, let pageSize):
+            return EndpointRequest(method: .get,
+                                   path: "api/v1/surveys?page[number]=3&page[size]=20",
+                                   queries: ["page[number]": pageIndex,
+                                          "page[size]": pageSize])
         }
     }
 }

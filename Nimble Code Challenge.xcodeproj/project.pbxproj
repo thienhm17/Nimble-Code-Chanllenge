@@ -51,6 +51,10 @@
 		F5F16D1527F0C05D0008DFA7 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16D1327F0C05D0008DFA7 /* ErrorResponse.swift */; };
 		F5F2298827F217BD00566875 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2298727F217BD00566875 /* HomeVC.swift */; };
 		F5F2298927F217BD00566875 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2298727F217BD00566875 /* HomeVC.swift */; };
+		F5F2298C27F225ED00566875 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2298B27F225ED00566875 /* HomeVM.swift */; };
+		F5F2298D27F225ED00566875 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2298B27F225ED00566875 /* HomeVM.swift */; };
+		F5F2298F27F2281D00566875 /* GetSurveysResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2298E27F2281D00566875 /* GetSurveysResponse.swift */; };
+		F5F2299027F2281D00566875 /* GetSurveysResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2298E27F2281D00566875 /* GetSurveysResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +112,8 @@
 		F5F16D1027F0ACE50008DFA7 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F5F16D1327F0C05D0008DFA7 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		F5F2298727F217BD00566875 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		F5F2298B27F225ED00566875 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		F5F2298E27F2281D00566875 /* GetSurveysResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSurveysResponse.swift; sourceTree = "<group>"; };
 		FC5FF803841BFE2DCAC3112D /* Pods_Nimble_Code_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nimble_Code_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD61AE3AEC3BAE9B649C7221 /* Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Nimble Code Challenge-Nimble Code ChallengeUITests/Pods-Nimble Code Challenge-Nimble Code ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,8 +227,9 @@
 		F5F16CD827EF83F00008DFA7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				F5F16CF727F059420008DFA7 /* LoginResponse.swift */,
 				F5F16D1327F0C05D0008DFA7 /* ErrorResponse.swift */,
+				F5F16CF727F059420008DFA7 /* LoginResponse.swift */,
+				F5F2298E27F2281D00566875 /* GetSurveysResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -269,8 +276,8 @@
 		F5F16CDF27EF83F00008DFA7 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F576C5CF27EED2EB0052559D /* AppDelegate.swift */,
 				F5F16CED27EF84810008DFA7 /* AppConfiguration.swift */,
+				F576C5CF27EED2EB0052559D /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -349,6 +356,7 @@
 		F5F2298A27F2194800566875 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F5F2298B27F225ED00566875 /* HomeVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -585,12 +593,14 @@
 				F5F16D1427F0C05D0008DFA7 /* ErrorResponse.swift in Sources */,
 				F5F16CE927EF83F00008DFA7 /* EndpointType.swift in Sources */,
 				F5F16D0A27F0AB120008DFA7 /* UIColor+Ext.swift in Sources */,
+				F5F2298F27F2281D00566875 /* GetSurveysResponse.swift in Sources */,
 				F5F16CF827F059420008DFA7 /* LoginResponse.swift in Sources */,
 				F5F16CE527EF83F00008DFA7 /* UIViewController+Ext.swift in Sources */,
 				F5F16D0027F0691F0008DFA7 /* LoginVM.swift in Sources */,
 				F5F16CF527F056790008DFA7 /* UserDefaultManager.swift in Sources */,
 				F5F16CEE27EF84810008DFA7 /* AppConfiguration.swift in Sources */,
 				F5F16D0E27F0AB590008DFA7 /* Common.swift in Sources */,
+				F5F2298C27F225ED00566875 /* HomeVM.swift in Sources */,
 				F576C5D027EED2EB0052559D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,12 +620,14 @@
 				F5F16D1527F0C05D0008DFA7 /* ErrorResponse.swift in Sources */,
 				F5F16CFD27F0690B0008DFA7 /* LoginVC.swift in Sources */,
 				F5F16D0B27F0AB120008DFA7 /* UIColor+Ext.swift in Sources */,
+				F5F2299027F2281D00566875 /* GetSurveysResponse.swift in Sources */,
 				F5F16CF227F0349B0008DFA7 /* APIError.swift in Sources */,
 				F576C5E727EED2EE0052559D /* Nimble_Code_ChallengeTests.swift in Sources */,
 				F5F16CE427EF83F00008DFA7 /* Encodable+Ext.swift in Sources */,
 				F5F16D0827F083610008DFA7 /* GradientView.swift in Sources */,
 				F5F16CE827EF83F00008DFA7 /* APIService.swift in Sources */,
 				F5F16D0F27F0AB590008DFA7 /* Common.swift in Sources */,
+				F5F2298D27F225ED00566875 /* HomeVM.swift in Sources */,
 				F5F16CE627EF83F00008DFA7 /* UIViewController+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

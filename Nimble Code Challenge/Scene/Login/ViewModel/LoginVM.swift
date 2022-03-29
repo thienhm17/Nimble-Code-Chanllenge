@@ -9,9 +9,9 @@ import Foundation
 
 class LoginVM {
     
-    var loading = Observable<Bool>(false)
-    var error = Observable<String?>(nil)
-    var loginSuccess = Observable<Bool>(false)
+    let loading = Observable<Bool>(false)
+    let error = Observable<String?>(nil)
+    let loginSuccess = Observable<Bool>(false)
     
     func login(email: String?, password: String?) {
         guard let email = email, !email.isEmpty,

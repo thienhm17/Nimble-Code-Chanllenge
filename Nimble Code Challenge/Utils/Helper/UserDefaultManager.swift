@@ -33,4 +33,9 @@ class UserDefaultsManager {
             UserDefaults.standard.set(newValue, forKey: Key.refreshToken.rawValue)
         }
     }
+    
+    func clearToken() {
+        accessToken = nil
+        refreshToken = nil
+    }
 }

@@ -49,6 +49,10 @@ class APIService {
                         }
                     
                     // else return other error
+                    } else if let responseCode = response.response?.statusCode {
+                        completion?(.failure(APIError.specifiedCode(responseCode)))
+                        
+                    // else return other error
                     } else {
                         completion?(.failure(APIError.other(error)))
                     }
@@ -140,5 +144,10 @@ extension APIService {
                 completion?(false)
             }
         }
+    }
+    
+    func getSurveys(pageIndex: Int, pageSize: Int, completion: ((Result<GetSurveyResponse, APIError>)->())?) {
+        
+        request(endpoint: .getSurveys(pageIndex: pageIndex, pageSize: pageSize), completion: completion)
     }
 }
