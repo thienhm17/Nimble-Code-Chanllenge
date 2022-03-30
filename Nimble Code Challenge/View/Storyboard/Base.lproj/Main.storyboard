@@ -177,7 +177,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5y-hn-Qr5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="77"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="77"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONDAY, JUNE 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frd-vZ-ci5">
                                         <rect key="frame" x="20" y="16" width="121.5" height="16"/>
@@ -240,11 +240,14 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="action"/>
+                                        <connections>
+                                            <segue destination="bLB-ON-BtM" kind="show" id="UGx-c2-9Zh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xiq-KM-fHC">
-                                <rect key="frame" x="179" y="157" width="56" height="56"/>
+                                <rect key="frame" x="179" y="201" width="56" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="buD-jM-HmX"/>
@@ -269,6 +272,7 @@
                             <constraint firstItem="Xtd-4L-8gj" firstAttribute="trailing" secondItem="JB2-OG-GIF" secondAttribute="trailing" id="zZq-pb-Gnw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rp5-OS-Q39"/>
                     <connections>
                         <outlet property="dateLabel" destination="Frd-vZ-ci5" id="x4m-Ij-3nm"/>
                         <outlet property="loadingIndicator" destination="xiq-KM-fHC" id="p2o-cu-HPM"/>
@@ -279,7 +283,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kg9-py-SWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="72"/>
+            <point key="canvasLocation" x="939" y="819"/>
+        </scene>
+        <!--Survey DetailVC-->
+        <scene sceneID="8vN-fL-BhP">
+            <objects>
+                <viewController id="bLB-ON-BtM" customClass="SurveyDetailVC" customModule="Nimble_Code_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M2Y-E4-gAQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="AbP-ps-hDL"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OzH-rU-gcE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Neb-cb-SKn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="819"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fD0-lc-EOL">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavigation" automaticallyAdjustsScrollViewInsets="NO" id="VYw-Gs-Mll" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mxY-2b-LDe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9MK-VI-23U" kind="relationship" relationship="rootViewController" id="28r-ZJ-fgX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="peT-Sk-SZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="819"/>
         </scene>
     </scenes>
     <resources>

@@ -17,6 +17,8 @@
 		F576C5E727EED2EE0052559D /* Nimble_Code_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F576C5E627EED2EE0052559D /* Nimble_Code_ChallengeTests.swift */; };
 		F576C5F127EED2EE0052559D /* Nimble_Code_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F576C5F027EED2EE0052559D /* Nimble_Code_ChallengeUITests.swift */; };
 		F576C5F327EED2EE0052559D /* Nimble_Code_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F576C5F227EED2EE0052559D /* Nimble_Code_ChallengeUITestsLaunchTests.swift */; };
+		F5C1089427F4B89F007BD7D2 /* SurveyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C1089327F4B89F007BD7D2 /* SurveyDetailVC.swift */; };
+		F5C1089527F4B89F007BD7D2 /* SurveyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C1089327F4B89F007BD7D2 /* SurveyDetailVC.swift */; };
 		F5F16CE327EF83F00008DFA7 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CDC27EF83F00008DFA7 /* Encodable+Ext.swift */; };
 		F5F16CE427EF83F00008DFA7 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CDC27EF83F00008DFA7 /* Encodable+Ext.swift */; };
 		F5F16CE527EF83F00008DFA7 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F16CDD27EF83F00008DFA7 /* UIViewController+Ext.swift */; };
@@ -95,6 +97,7 @@
 		F576C5EC27EED2EE0052559D /* Nimble Code ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nimble Code ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F576C5F027EED2EE0052559D /* Nimble_Code_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nimble_Code_ChallengeUITests.swift; sourceTree = "<group>"; };
 		F576C5F227EED2EE0052559D /* Nimble_Code_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nimble_Code_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F5C1089327F4B89F007BD7D2 /* SurveyDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailVC.swift; sourceTree = "<group>"; };
 		F5F16CDC27EF83F00008DFA7 /* Encodable+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
 		F5F16CDD27EF83F00008DFA7 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		F5F16CE127EF83F00008DFA7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -294,6 +297,7 @@
 		F5F16CEB27EF841B0008DFA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F5C1089327F4B89F007BD7D2 /* SurveyDetailVC.swift */,
 				F5F16D0527F083310008DFA7 /* Custom */,
 				F5F16CEC27EF84220008DFA7 /* Storyboard */,
 			);
@@ -592,6 +596,7 @@
 				F5F16CE727EF83F00008DFA7 /* APIService.swift in Sources */,
 				F5F16D1427F0C05D0008DFA7 /* ErrorResponse.swift in Sources */,
 				F5F16CE927EF83F00008DFA7 /* EndpointType.swift in Sources */,
+				F5C1089427F4B89F007BD7D2 /* SurveyDetailVC.swift in Sources */,
 				F5F16D0A27F0AB120008DFA7 /* UIColor+Ext.swift in Sources */,
 				F5F2298F27F2281D00566875 /* GetSurveysResponse.swift in Sources */,
 				F5F16CF827F059420008DFA7 /* LoginResponse.swift in Sources */,
@@ -619,6 +624,7 @@
 				F5F16CF627F056790008DFA7 /* UserDefaultManager.swift in Sources */,
 				F5F16D1527F0C05D0008DFA7 /* ErrorResponse.swift in Sources */,
 				F5F16CFD27F0690B0008DFA7 /* LoginVC.swift in Sources */,
+				F5C1089527F4B89F007BD7D2 /* SurveyDetailVC.swift in Sources */,
 				F5F16D0B27F0AB120008DFA7 /* UIColor+Ext.swift in Sources */,
 				F5F2299027F2281D00566875 /* GetSurveysResponse.swift in Sources */,
 				F5F16CF227F0349B0008DFA7 /* APIError.swift in Sources */,
