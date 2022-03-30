@@ -76,19 +76,32 @@ class HomeVC: UIViewController {
     // MARK: - Private
 
     private func showLoading(isLoading: Bool) {
-        isLoading ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
+        isLoading ? loadingIndicator.startAnimating() : loadingIndicator.stopAnimating()
     }
     
     private func update(survey: Survey?) {
-        
+        // update survey image with fade animation
         if let coverImage = survey?.attributes?.coverImageURL,
            let url = URL(string: coverImage) {
-            surveyImage.kf.setImage(with: url)
+            KF.url(url)
+                .placeholder(surveyImage.image)
+                .forceRefresh()
+                .fade(duration: 0.5)
+                .set(to: surveyImage)
         } else {
             surveyImage.image = nil
         }
         
-        surveyTitle.text = survey?.attributes?.title ?? ""
-        surveyDescription.text = survey?.attributes?.attributesDescription ?? ""
+        // update survey labels with fade animation
+        UIView.transition(with: surveyTitle,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve,
+                          animations: { self.surveyTitle?.text = survey?.attributes?.title ?? "" },
+                          completion: nil)
+        UIView.transition(with: surveyDescription,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve,
+                          animations: { self.surveyDescription?.text = survey?.attributes?.attributesDescription ?? "" },
+                          completion: nil)
     }
 }
