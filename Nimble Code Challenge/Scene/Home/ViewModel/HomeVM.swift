@@ -12,6 +12,7 @@ class HomeVM {
     let loading = Observable<Bool>(false)
     let error = Observable<String?>(nil)
     let currentSurvey = Observable<Survey?>(nil)
+    var numberOfSurveys = 0
     
     private var items = [Survey]()
     private var currentPage = 0
@@ -20,7 +21,7 @@ class HomeVM {
     private var nextPage: Int { hasMorePages ? currentPage + 1 : currentPage }
     private var isRefreshing = true
     
-    private var currentIndex: Int = 0 {
+    private (set) var currentIndex: Int = 0 {
         didSet {
             if items.count > currentIndex {
                 currentSurvey.value = items[currentIndex]
@@ -65,10 +66,12 @@ class HomeVM {
                 if let surveys = response.data {
                     self.appendItems(surveys, of: nextPage)
                     self.hasMorePages = surveys.count >= self.pageSize
-                    
+
                 } else {
                     self.hasMorePages = false
                 }
+                // set number of records
+                self.numberOfSurveys = response.meta?.records ?? 0
                 
             case .failure(let error):
                 // if error is 404 not found
@@ -106,7 +109,7 @@ extension HomeVM {
     }
     
     func getPreviousItem() {
-        guard currentIndex - 1 > 0 else { return }
+        guard currentIndex - 1 >= 0 else { return }
         currentIndex -= 1
     }
     

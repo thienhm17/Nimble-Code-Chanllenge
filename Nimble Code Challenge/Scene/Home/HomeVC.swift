@@ -16,6 +16,8 @@ class HomeVC: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var indicatorClv: UICollectionView!
+    
     var viewModel = HomeVM()
     
     // MARK: - Lifecycle
@@ -30,8 +32,12 @@ class HomeVC: UIViewController {
     }
     
     private func setupUI() {
+        // hide navigation bar
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
+        // setup indicator collection view
+        indicatorClv.dataSource = self
+        indicatorClv.delegate = self
+        // setup date label
         let date = viewModel.getDateString()
         dateLabel.text = date
     }
@@ -103,5 +109,48 @@ class HomeVC: UIViewController {
                           options: .transitionCrossDissolve,
                           animations: { self.surveyDescription?.text = survey?.attributes?.attributesDescription ?? "" },
                           completion: nil)
+        
+        // update indicator
+        indicatorClv.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) { [weak self] in
+            guard let self = self,
+                  self.viewModel.numberOfSurveys > 0 else {
+                      return
+                  }
+            // scroll to current index
+            self.indicatorClv.scrollToItem(at: IndexPath(item: self.viewModel.currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+            
+        }
+    }
+}
+
+extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfSurveys
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? DotIndicatorCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.updateCell(isFocused: indexPath.item == viewModel.currentIndex)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 8, height: 8)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
 }
