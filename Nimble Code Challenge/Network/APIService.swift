@@ -10,13 +10,14 @@ import Alamofire
 
 typealias CompletionHandler<T: Decodable> = ((Result<T, APIError>) -> Void)
 
-class APIService {
+final class APIService {
     
     static let shared = APIService()
+    private init() {}
     
     private let numberOfRetry = 3
     
-    private func request<T: Decodable>(endpoint: EndpointType,
+    func request<T: Decodable>(endpoint: EndpointType,
                                        onQueue queue: DispatchQueue? = nil,
                                        completion: CompletionHandler<T>?) {
         
@@ -49,13 +50,40 @@ class APIService {
                         }
                     
                     // else return other error
+                    } else if let responseCode = response.response?.statusCode {
+                        completion?(.failure(APIError.specifiedCode(responseCode)))
+                        
+                    // else return other error
                     } else {
                         completion?(.failure(APIError.other(error)))
                     }
                 }
             }
     }
-    
+ 
+    func refreshToken(completion: ((Bool)->())?) {
+        guard let refreshToken = UserDefaultsManager.shared.refreshToken else { return }
+        
+        request(endpoint: .refreshToken(token: refreshToken)) { (result: Result<LoginResponse, APIError>) in
+            
+            switch result {
+            case .success(let response):
+                if let accessToken = response.data?.attributes?.accessToken,
+                   let refreshToken = response.data?.attributes?.refreshToken {
+                    // store tokens
+                    UserDefaultsManager.shared.accessToken = accessToken
+                    UserDefaultsManager.shared.refreshToken = refreshToken
+                    // callback completion
+                    completion?(true)
+                 
+                } else {
+                    completion?(false)
+                }
+            case .failure:
+                completion?(false)
+            }
+        }
+    }
 }
 
 extension APIService: RequestInterceptor {
@@ -81,64 +109,13 @@ extension APIService: RequestInterceptor {
         
         // check if need refresh token
         if request.response?.statusCode == 401 {
-            APIService.shared.refreshToken { isSuccess in
+            refreshToken { isSuccess in
                 completion(isSuccess ? .retry : .doNotRetryWithError(APIError.unauthorized))
             }
         
         // else retry request
         } else {
             completion(.retry)
-        }
-    }
-}
-
-// MARK: Services
-extension APIService {
-    
-    func login(email: String, password: String, completion: ((APIError?)->())?) {
-        request(endpoint: .login(email: email, password: password)) { (result: Result<LoginResponse, APIError>) in
-            
-            switch result {
-            case .success(let response):
-                if let accessToken = response.data?.attributes?.accessToken,
-                   let refreshToken = response.data?.attributes?.refreshToken {
-                    // store tokens
-                    UserDefaultsManager.shared.accessToken = accessToken
-                    UserDefaultsManager.shared.refreshToken = refreshToken
-                    // callback completion
-                    completion?(nil)
-                 
-                } else {
-                    completion?(APIError.unknown(data: nil))
-                }
-                
-            case .failure(let error):
-                completion?(error)
-            }
-        }
-    }
-    
-    func refreshToken(completion: ((Bool)->())?) {
-        guard let refreshToken = UserDefaultsManager.shared.refreshToken else { return }
-        
-        request(endpoint: .refreshToken(token: refreshToken)) { (result: Result<LoginResponse, APIError>) in
-            
-            switch result {
-            case .success(let response):
-                if let accessToken = response.data?.attributes?.accessToken,
-                   let refreshToken = response.data?.attributes?.refreshToken {
-                    // store tokens
-                    UserDefaultsManager.shared.accessToken = accessToken
-                    UserDefaultsManager.shared.refreshToken = refreshToken
-                    // callback completion
-                    completion?(true)
-                 
-                } else {
-                    completion?(false)
-                }
-            case .failure:
-                completion?(false)
-            }
         }
     }
 }

@@ -64,10 +64,19 @@ class LoginVC: UIViewController {
                 self?.showError(message: errorMessage)
             }
         }
+        viewModel.loginSuccess.observe(on: self) { [weak self] isLoginSuccess in
+            if isLoginSuccess {
+                self?.onLoggedIn()
+            }
+        }
     }
 
     private func showLoading(isLoading: Bool) {
         isLoading ? loadingIndicator.startAnimating() : loadingIndicator.stopAnimating()
+    }
+    
+    private func onLoggedIn() {
+        (UIApplication.shared.delegate as? AppDelegate)?.navigateToHome()
     }
     
 }

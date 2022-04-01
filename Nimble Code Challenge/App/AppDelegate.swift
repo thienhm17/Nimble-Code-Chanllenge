@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // enable IQKeyboardManager
         IQKeyboardManager.shared.enable = true
+        // clear token
+        UserDefaultsManager.shared.clearToken()
         // setup window and first scene
         window = UIWindow(frame: UIScreen.main.bounds)
         navigateToLogin()
@@ -26,9 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func navigateToHome() {
-//        let home = MainVC.initFromStoryboard()
-//        let nav = UINavigationController(rootViewController: home)
-//        window?.rootViewController = nav
+        if let homeNav = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "HomeNavigation") as? UINavigationController {
+            window?.rootViewController = homeNav
+        }
     }
     
     func navigateToLogin() {
