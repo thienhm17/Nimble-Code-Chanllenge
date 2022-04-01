@@ -10,6 +10,10 @@
 		2E01D6341585656E65AE409D /* Pods_Nimble_Code_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E01D8181212CF8324D1C856 /* Pods_Nimble_Code_ChallengeUITests.framework */; };
 		440028CA8CD69A39BF33C15F /* Pods_Nimble_Code_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB3FB98485841756E6422B5 /* Pods_Nimble_Code_Challenge.framework */; };
 		6BD35AE03177828563010025 /* Pods_Nimble_Code_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5FF803841BFE2DCAC3112D /* Pods_Nimble_Code_ChallengeTests.framework */; };
+		F53D1D4727F6FC9000493654 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D1D4627F6FC9000493654 /* AuthServices.swift */; };
+		F53D1D4827F6FC9000493654 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D1D4627F6FC9000493654 /* AuthServices.swift */; };
+		F53D1D4D27F74CEA00493654 /* SurveyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D1D4C27F74CEA00493654 /* SurveyServices.swift */; };
+		F53D1D4E27F74CEA00493654 /* SurveyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D1D4C27F74CEA00493654 /* SurveyServices.swift */; };
 		F576C5D027EED2EB0052559D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F576C5CF27EED2EB0052559D /* AppDelegate.swift */; };
 		F576C5D727EED2EB0052559D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F576C5D527EED2EB0052559D /* Main.storyboard */; };
 		F576C5D927EED2EE0052559D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F576C5D827EED2EE0052559D /* Assets.xcassets */; };
@@ -88,6 +92,8 @@
 		8E01D8181212CF8324D1C856 /* Pods_Nimble_Code_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nimble_Code_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		974191DC97A5FCDDD18EB189 /* Pods-Nimble Code ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-Nimble Code ChallengeUITests/Pods-Nimble Code ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CDDB77A61FE10ECD696681D3 /* Pods-Nimble Code ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimble Code ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-Nimble Code ChallengeTests/Pods-Nimble Code ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		F53D1D4627F6FC9000493654 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		F53D1D4C27F74CEA00493654 /* SurveyServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyServices.swift; sourceTree = "<group>"; };
 		F576C5CC27EED2EB0052559D /* Nimble Code Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nimble Code Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F576C5CF27EED2EB0052559D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F576C5D627EED2EB0052559D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -301,6 +307,8 @@
 			children = (
 				F5F16CE127EF83F00008DFA7 /* APIService.swift */,
 				F5F16CE227EF83F00008DFA7 /* EndpointType.swift */,
+				F53D1D4627F6FC9000493654 /* AuthServices.swift */,
+				F53D1D4C27F74CEA00493654 /* SurveyServices.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -607,6 +615,7 @@
 				F5F16D0727F083610008DFA7 /* GradientView.swift in Sources */,
 				F5F16CE727EF83F00008DFA7 /* APIService.swift in Sources */,
 				F5F16D1427F0C05D0008DFA7 /* ErrorResponse.swift in Sources */,
+				F53D1D4727F6FC9000493654 /* AuthServices.swift in Sources */,
 				F5F16CE927EF83F00008DFA7 /* EndpointType.swift in Sources */,
 				F5C1089427F4B89F007BD7D2 /* SurveyDetailVC.swift in Sources */,
 				F5C1089827F4CA62007BD7D2 /* DotIndicatorCell.swift in Sources */,
@@ -614,6 +623,7 @@
 				F5F2298F27F2281D00566875 /* GetSurveysResponse.swift in Sources */,
 				F5F16CF827F059420008DFA7 /* LoginResponse.swift in Sources */,
 				F5F16CE527EF83F00008DFA7 /* UIViewController+Ext.swift in Sources */,
+				F53D1D4D27F74CEA00493654 /* SurveyServices.swift in Sources */,
 				F5F16D0027F0691F0008DFA7 /* LoginVM.swift in Sources */,
 				F5F16CF527F056790008DFA7 /* UserDefaultManager.swift in Sources */,
 				F5F16CEE27EF84810008DFA7 /* AppConfiguration.swift in Sources */,
@@ -636,6 +646,7 @@
 				F5F16D0427F069EA0008DFA7 /* Observable.swift in Sources */,
 				F5F16CF627F056790008DFA7 /* UserDefaultManager.swift in Sources */,
 				F5F16D1527F0C05D0008DFA7 /* ErrorResponse.swift in Sources */,
+				F53D1D4827F6FC9000493654 /* AuthServices.swift in Sources */,
 				F5F16CFD27F0690B0008DFA7 /* LoginVC.swift in Sources */,
 				F5C1089527F4B89F007BD7D2 /* SurveyDetailVC.swift in Sources */,
 				F5C1089927F4CA62007BD7D2 /* DotIndicatorCell.swift in Sources */,
@@ -643,6 +654,7 @@
 				F5F2299027F2281D00566875 /* GetSurveysResponse.swift in Sources */,
 				F5F16CF227F0349B0008DFA7 /* APIError.swift in Sources */,
 				F576C5E727EED2EE0052559D /* Nimble_Code_ChallengeTests.swift in Sources */,
+				F53D1D4E27F74CEA00493654 /* SurveyServices.swift in Sources */,
 				F5F16CE427EF83F00008DFA7 /* Encodable+Ext.swift in Sources */,
 				F5F16D0827F083610008DFA7 /* GradientView.swift in Sources */,
 				F5F16CE827EF83F00008DFA7 /* APIService.swift in Sources */,

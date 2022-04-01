@@ -10,13 +10,14 @@ import Alamofire
 
 typealias CompletionHandler<T: Decodable> = ((Result<T, APIError>) -> Void)
 
-class APIService {
+final class APIService {
     
     static let shared = APIService()
+    private init() {}
     
     private let numberOfRetry = 3
     
-    private func request<T: Decodable>(endpoint: EndpointType,
+    func request<T: Decodable>(endpoint: EndpointType,
                                        onQueue queue: DispatchQueue? = nil,
                                        completion: CompletionHandler<T>?) {
         
@@ -59,7 +60,30 @@ class APIService {
                 }
             }
     }
-    
+ 
+    func refreshToken(completion: ((Bool)->())?) {
+        guard let refreshToken = UserDefaultsManager.shared.refreshToken else { return }
+        
+        request(endpoint: .refreshToken(token: refreshToken)) { (result: Result<LoginResponse, APIError>) in
+            
+            switch result {
+            case .success(let response):
+                if let accessToken = response.data?.attributes?.accessToken,
+                   let refreshToken = response.data?.attributes?.refreshToken {
+                    // store tokens
+                    UserDefaultsManager.shared.accessToken = accessToken
+                    UserDefaultsManager.shared.refreshToken = refreshToken
+                    // callback completion
+                    completion?(true)
+                 
+                } else {
+                    completion?(false)
+                }
+            case .failure:
+                completion?(false)
+            }
+        }
+    }
 }
 
 extension APIService: RequestInterceptor {
@@ -85,7 +109,7 @@ extension APIService: RequestInterceptor {
         
         // check if need refresh token
         if request.response?.statusCode == 401 {
-            APIService.shared.refreshToken { isSuccess in
+            refreshToken { isSuccess in
                 completion(isSuccess ? .retry : .doNotRetryWithError(APIError.unauthorized))
             }
         
@@ -93,61 +117,5 @@ extension APIService: RequestInterceptor {
         } else {
             completion(.retry)
         }
-    }
-}
-
-// MARK: Services
-extension APIService {
-    
-    func login(email: String, password: String, completion: ((APIError?)->())?) {
-        request(endpoint: .login(email: email, password: password)) { (result: Result<LoginResponse, APIError>) in
-            
-            switch result {
-            case .success(let response):
-                if let accessToken = response.data?.attributes?.accessToken,
-                   let refreshToken = response.data?.attributes?.refreshToken {
-                    // store tokens
-                    UserDefaultsManager.shared.accessToken = accessToken
-                    UserDefaultsManager.shared.refreshToken = refreshToken
-                    // callback completion
-                    completion?(nil)
-                 
-                } else {
-                    completion?(APIError.unknown(data: nil))
-                }
-                
-            case .failure(let error):
-                completion?(error)
-            }
-        }
-    }
-    
-    func refreshToken(completion: ((Bool)->())?) {
-        guard let refreshToken = UserDefaultsManager.shared.refreshToken else { return }
-        
-        request(endpoint: .refreshToken(token: refreshToken)) { (result: Result<LoginResponse, APIError>) in
-            
-            switch result {
-            case .success(let response):
-                if let accessToken = response.data?.attributes?.accessToken,
-                   let refreshToken = response.data?.attributes?.refreshToken {
-                    // store tokens
-                    UserDefaultsManager.shared.accessToken = accessToken
-                    UserDefaultsManager.shared.refreshToken = refreshToken
-                    // callback completion
-                    completion?(true)
-                 
-                } else {
-                    completion?(false)
-                }
-            case .failure:
-                completion?(false)
-            }
-        }
-    }
-    
-    func getSurveys(pageIndex: Int, pageSize: Int, completion: ((Result<GetSurveyResponse, APIError>)->())?) {
-        
-        request(endpoint: .getSurveys(pageIndex: pageIndex, pageSize: pageSize), completion: completion)
     }
 }

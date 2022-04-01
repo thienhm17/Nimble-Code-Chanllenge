@@ -31,6 +31,12 @@ class HomeVM {
         }
     }
     
+    private let surveyServices: SurveyServicesProtocol
+    
+    init(surveyServices: SurveyServicesProtocol = SurveyServices()) {
+        self.surveyServices = surveyServices
+    }
+    
     private func appendItems(_ items: [Survey], of page: Int) {
         self.currentPage = page
         self.items.append(contentsOf: items)
@@ -53,7 +59,7 @@ class HomeVM {
             self.loading.value = true
         }
         
-        APIService.shared.getSurveys(pageIndex: nextPage, pageSize: pageSize) { [weak self] result in
+        surveyServices.getSurveys(pageIndex: nextPage, pageSize: pageSize) { [weak self] result in
             
             guard let self = self else { return }
             if nextPage == 1 {

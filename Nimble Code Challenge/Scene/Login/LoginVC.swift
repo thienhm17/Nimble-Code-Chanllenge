@@ -23,8 +23,6 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        emailTextField.text = "thienhm@mail.com"
-        passwordTextField.text = "12345678"
         bind(to: viewModel)
     }
     
