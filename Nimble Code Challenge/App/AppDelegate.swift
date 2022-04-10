@@ -16,11 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // enable IQKeyboardManager
         IQKeyboardManager.shared.enable = true
-        // clear token
-        UserDefaultsManager.shared.clearToken()
+        
         // setup window and first scene
         window = UIWindow(frame: UIScreen.main.bounds)
-        navigateToLogin()
+        // if has access token
+        if let _ = UserDefaultsManager.shared.accessToken {
+            navigateToHome()
+            
+        } else {
+            navigateToLogin()
+        }
         window?.makeKeyAndVisible()
         
         return true

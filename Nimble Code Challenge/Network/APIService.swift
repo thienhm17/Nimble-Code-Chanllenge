@@ -110,7 +110,18 @@ extension APIService: RequestInterceptor {
         // check if need refresh token
         if request.response?.statusCode == 401 {
             refreshToken { isSuccess in
-                completion(isSuccess ? .retry : .doNotRetryWithError(APIError.unauthorized))
+                // if refresh token successfully
+                if isSuccess {
+                    completion(.retry)
+                    
+                } else if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    // navigate to login screen
+                    appDelegate.navigateToLogin()
+                    completion(.doNotRetry)
+                    
+                } else {
+                    completion(isSuccess ? .retry : .doNotRetryWithError(APIError.unauthorized))
+                }
             }
         
         // else retry request
