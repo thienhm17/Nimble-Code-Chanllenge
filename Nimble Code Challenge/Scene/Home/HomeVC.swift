@@ -88,7 +88,7 @@ class HomeVC: UIViewController {
     private func update(survey: Survey?) {
         // update survey image with fade animation
         if let coverImage = survey?.attributes?.coverImageURL,
-           let url = URL(string: coverImage) {
+           let url = URL(string: coverImage + "l") {
             KF.url(url)
                 .placeholder(surveyImage.image)
                 .forceRefresh()
